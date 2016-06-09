@@ -4,7 +4,6 @@
 
 (defn -main
   [& args]
-  ;(println "Mapping functions through functions, wow: " (clojure-noob.map/stats [1 3 5 0 3]))
-  )
+  (println "Mapping functions through functions, wow: " (clojure-noob.map/stats [1 3 5 0 3])))
 
 
