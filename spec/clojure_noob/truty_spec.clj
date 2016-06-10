@@ -14,17 +14,21 @@
     (should= nil (and :flerp nil :derp))))
 
 (describe "truthyness"
-  (it "returns true for an empty vector"
-      (should= :its-true (truthy? [])))
-  (it "returns true for zero"
-      (should= :its-true (truthy? 0)))
-  (it "returns true for an empty list"
-      (should= :its-true (truthy? '())))
-  (it "returns true for an empty string"
-      (should= :its-true (truthy? "")))
-  (it "returns false for nil"
-      (should= :its-false (truthy? nil)))
-  (it "returns false for false"
-      (should= :its-false (truthy? false))))
+  (context "truthy"
+    (it "returns true for an empty vector"
+        (should= :its-true (truthy? [])))
+    (it "returns true for zero"
+        (should= :its-true (truthy? 0)))
+    (it "returns true for an empty list"
+        (should= :its-true (truthy? '())))
+    (it "returns true for an empty string"
+        (should= :its-true (truthy? ""))))
+  (context "falsy"
+     (it "returns false for nil"
+         (should= :its-false (truthy? nil)))
+     (it "returns false for false"
+         (should= :its-false (truthy? false)))
+     (it "returns false for an empty sequence"
+         (should= :its-false (truthy? (seq ()))))))
 
 (run-specs)
